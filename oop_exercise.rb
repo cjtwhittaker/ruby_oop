@@ -7,6 +7,7 @@ class Person
     @surname = surname.capitalize
     @dob = dob
     @emails = []
+    @phone_numbers = []
 
 
 #binding.pry
@@ -19,7 +20,24 @@ class Person
     @emails << email
   end
 
+  def remove_email(v)
+    @emails.delete_at(v)
+  end
+
+
+  def add_phone(phone_number)
+    @phone_numbers << phone_number
+  end
+
+  def remove_phone(v)
+    @phone_numbers.delete_at(v)
+  end
+
+
+  def to_s
+    puts "#{@first_name} #{@surname} was born on #{@dob} Their email addresses are: #{@emai}. Their phone numbers are #{phone_numbers}"
+  end
 end
 
   
-person = Person.new("joe", "bloggs", "1 Jan 1990")
+#person = Person.new("joe", "bloggs", "1 Jan 1990")
