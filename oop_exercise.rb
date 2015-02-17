@@ -6,12 +6,18 @@ class Person
     @first_name = first_name.capitalize
     @surname = surname.capitalize
     @dob = dob
+    @emails = []
 
 
 #binding.pry
 	end
 
   attr_accessor :dob, :first_name, :surname
+  attr_reader :emails, :phone_numbers
+
+  def add_email(email)
+    @emails << email
+  end
 
 end
 
