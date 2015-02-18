@@ -90,8 +90,7 @@ class AddressBook
 
     puts "Address Book"
     puts "--------"
-    puts
-
+    @contacts.each_with_index{|value, index| puts "Entry #{index + 1}: #{value}"}
   end
 end
 #person = Person.new("joe", "bloggs", "1 Jan 1990")
