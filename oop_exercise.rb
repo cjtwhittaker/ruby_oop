@@ -1,5 +1,6 @@
 require 'pry'
 require 'time'
+require 'date'
 
 class Person
 
@@ -10,9 +11,7 @@ class Person
     @emails = []
     @phone_numbers = []
 
-
-#binding.pry
-	end
+  end
 
   attr_accessor :dob, :first_name, :surname
   attr_reader :emails, :phone_numbers
@@ -46,20 +45,53 @@ class Person
   def print_details
     puts "#{fullname}"
     puts "---------"
-    puts "Date of Birth: #{dob.}"
-    puts ""
+    puts "Date of Birth: #{dob}"
+    puts " "
     puts "Email addresses:"
     emails.each{|x| puts "- #{x}"}
-    puts ""
+    puts " "
     puts "Phone NNumbers:"
     phone_numbers.each{|x| puts "- #{x}"}
-
-
   end
 
 end
 
+
+class FamilyMember < Person
+  attr_accessor :relationship
+
+  def initialise(first_name, surname, dob = 'nil')
+    @relationship = relationship
+    super
+  end
+=begin
   
+  def relationship
+     @relationship
+  end
+=end
+end
 
+class AddressBook
+#class to be able to add people to an address book
+  def initialize
 
+    @contacts = []
+
+  end
+
+  def add(person)
+
+    @contacts << person.fullname
+  
+  end
+
+  def list
+
+    puts "Address Book"
+    puts "--------"
+    puts
+
+  end
+end
 #person = Person.new("joe", "bloggs", "1 Jan 1990")
