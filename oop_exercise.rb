@@ -4,7 +4,7 @@ require 'date'
 
 class Person
 
-	def initialize(first_name, surname, dob = 'nil')
+  def initialize(first_name, surname, dob = 'nil')
     @first_name = first_name.capitalize
     @surname = surname.capitalize
     @dob = dob
@@ -73,7 +73,7 @@ class FamilyMember < Person
 end
 
 class AddressBook
-#class to be able to add people to an address book
+  #class to be able to add people to an address book
   def initialize
 
     @contacts = []
@@ -83,7 +83,7 @@ class AddressBook
   def add(person)
 
     @contacts << person.fullname
-  
+
   end
 
   def list
